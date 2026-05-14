@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expense & Budget Visualizer</title>
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="container">
+
+    <div class="top-bar">
+      <h1>Expense & Budget Visualizer</h1>
+
+      <button id="themeToggle">🌙 Dark Mode</button>
+    </div>
+
+    <div class="balance-card">
+      <h2>Total Spending</h2>
+      <h1 id="totalBalance">Rp 0</h1>
+    </div>
+
+    <div class="card">
+      <h3>Add Transaction</h3>
+
+      <form id="expenseForm">
+
+        <input
+          type="text"
+          id="itemName"
+          placeholder="Item Name"
+        >
+
+        <input
+          type="number"
+          id="amount"
+          placeholder="Amount"
+        >
+
+        <select id="category">
+          <option value="">Select Category</option>
+          <option value="Food">Food</option>
+          <option value="Transport">Transport</option>
+          <option value="Fun">Fun</option>
+        </select>
+
+        <input
+          type="text"
+          id="customCategory"
+          placeholder="Custom Category (Optional)"
+        >
+
+        <button type="submit">
+          Add Transaction
+        </button>
+
+      </form>
+    </div>
+
+    <div class="card">
+
+      <div class="transaction-header">
+        <h3>Transaction List</h3>
+
+        <select id="sortOption">
+          <option value="default">Sort By</option>
+          <option value="amount">Amount</option>
+          <option value="category">Category</option>
+        </select>
+      </div>
+
+      <div id="transactionList" class="transaction-list"></div>
+
+    </div>
+
+    <div class="card">
+      <h3>Spending Distribution</h3>
+
+      <canvas id="expenseChart"></canvas>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
